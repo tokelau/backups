@@ -1,5 +1,6 @@
-add_library(labs lab3/BackupJob.cpp lab3/BackupJob.h lab3/JobObject.cpp lab3/JobObject.h lab3/Repository.cpp lab3/Repository.h lab3/RestorePoint.cpp lab3/RestorePoint.h lab3/Storage.cpp lab3/Storage.h lab3/libzippp-master)
+add_library(labs lab3/BackupJob.cpp lab3/BackupJob.h lab3/JobObject.cpp lab3/JobObject.h lab3/Repository.cpp lab3/Repository.h lab3/RestorePoint.cpp lab3/RestorePoint.h lab3/Storage.cpp lab3/Storage.h)
 
+add_subdirectory(libzippp-master)
 include_directories(${libzippp-master_SOURCE_DIR}/src ${libzippp-master_SOURCE_DIR})
 
 target_sources(labs
