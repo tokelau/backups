@@ -8,9 +8,6 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 set(BUILD_GMOCK OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(gtest)
 
-add_subdirectory(../labs_src/lab3/libzippp-master)
-include_directories(${libzippp-master_SOURCE_DIR}/src ${libzippp-master_SOURCE_DIR})
-
 add_executable(
     unit_tests
         lab3_tests.cpp
@@ -20,7 +17,6 @@ target_link_libraries(unit_tests
   PRIVATE
     labs
     gtest_main
-        libzippp::libzippp
   )
 
 # automatic discovery of unit tests
