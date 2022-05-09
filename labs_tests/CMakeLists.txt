@@ -8,26 +8,8 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 set(BUILD_GMOCK OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(gtest)
 
-#FetchContent_Declare(zstd
-#        QUIET
-#        URL https://github.com/facebook/zstd/releases/download/v1.5.2/zstd-1.5.2.tar.gz
-#        )
-#FetchContent_MakeAvailable(zstd)
-
-FetchContent_Declare(libzip
-        QUIET
-        URL https://libzip.org/download/libzip-1.8.0.tar.xz
-        )
-set(ENABLE_ZSTD "Enable use of Zstandard" OFF)
-FetchContent_MakeAvailable(libzip)
-
-FetchContent_Declare(libzippp
-        QUIET
-        URL https://github.com/ctabin/libzippp/archive/refs/tags/libzippp-v5.0-1.8.0.tar.gz
-        )
-FetchContent_MakeAvailable(libzippp)
-#add_subdirectory(libzip-1.8.0)
-#include_directories(${libzip-1.8.0_SOURCE_DIR}/src ${libzip-1.8.0_SOURCE_DIR})
+add_subdirectory(libzippp-master)
+include_directories(${libzippp-master_SOURCE_DIR}/src ${libzippp-master_SOURCE_DIR})
 
 add_executable(
     unit_tests
@@ -38,7 +20,7 @@ target_link_libraries(unit_tests
   PRIVATE
     labs
     gtest_main
-        libzip
+        libzippp::libzippp
   )
 
 # automatic discovery of unit tests

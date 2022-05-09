@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.0.2)
 
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+list(APPEND CMAKE_MODULE_PATH cmake)
 if (${CMAKE_VERSION} VERSION_LESS "3.17.0")
-  list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake-compat)
+  list(APPEND CMAKE_MODULE_PATH cmake-compat)
 endif()
 
 project(libzip
@@ -290,10 +290,10 @@ if(CMAKE_SYSTEM_NAME MATCHES BSD)
   set(PKG_CONFIG_RPATH "-Wl,-R\${libdir}")
 endif(CMAKE_SYSTEM_NAME MATCHES BSD)
 get_target_property(LIBS_PRIVATE zip LINK_LIBRARIES)
-foreach(LIB ${LIBS_PRIVATE})
-  if(LIB MATCHES "^/")
-    get_filename_component(LIB ${LIB} NAME_WE)
-    string(REGEX REPLACE "^lib" "" LIB ${LIB})
+foreach(lib ${LIBS_PRIVATE})
+  if(lib MATCHES "^/")
+    get_filename_component(lib ${LIB} NAME_WE)
+    string(REGEX REPLACE "^lib" "" lib ${LIB})
   endif()
   set(LIBS "${LIBS} -l${LIB}")
 endforeach()
@@ -401,13 +401,13 @@ else()
 endif()
 
 # write out config file
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/cmake-config.h.in ${PROJECT_BINARY_DIR}/config.h)
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/cmake-zipconf.h.in ${PROJECT_BINARY_DIR}/zipconf.h)
+configure_file(cmake-config.h.in ${PROJECT_BINARY_DIR}/config.h)
+configure_file(cmake-zipconf.h.in ${PROJECT_BINARY_DIR}/zipconf.h)
 
 # for tests
 
-set(srcdir ${CMAKE_CURRENT_SOURCE_DIR}/regress)
-set(abs_srcdir ${CMAKE_CURRENT_SOURCE_DIR}/regress)
+set(srcdir regress)
+set(abs_srcdir regress)
 set(top_builddir ${PROJECT_BINARY_DIR}) # used to find config.h
 
 configure_file(regress/nihtest.conf.in ${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/nihtest.conf @ONLY)

@@ -3,7 +3,7 @@
 ####### Any changes to this file will be overwritten by the next CMake run ####
 ####### The input file was libzip-config.cmake.in                            ########
 
-get_filename_component(PACKAGE_PREFIX_DIR "${CMAKE_CURRENT_LIST_DIR}/../../../" ABSOLUTE)
+get_filename_component(PACKAGE_PREFIX_DIR "../../.." ABSOLUTE)
 
 macro(set_and_check _var _file)
   set(${_var} "${_file}")
@@ -29,7 +29,7 @@ endmacro()
 #find_dependency(ZLIB::ZLIB)
 # how to handle the optional dependencies?
 # Provide all our library targets to users.
-include("${CMAKE_CURRENT_LIST_DIR}/libzip-targets.cmake")
+include("libzip-targets.cmake")
 
 check_required_components(libzip)
 

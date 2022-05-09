@@ -152,7 +152,7 @@ directory for ``automoc4``.  Then the call to
 message.
 #]=======================================================================]
 
-include(${CMAKE_CURRENT_LIST_DIR}/FindPackageMessage.cmake)
+include(FindPackageMessage.cmake)
 
 # internal helper macro
 macro(_FPHSA_FAILURE_MESSAGE _msg)

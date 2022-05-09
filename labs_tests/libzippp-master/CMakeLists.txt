@@ -20,9 +20,11 @@ option(LIBZIPPP_INSTALL_HEADERS "Install the headers" ${is_root_project})
 option(LIBZIPPP_BUILD_TESTS "Build unit tests" ${is_root_project})
 option(LIBZIPPP_ENABLE_ENCRYPTION "Build with encryption enabled" OFF)
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+list(APPEND CMAKE_MODULE_PATH "cmake")
 
 #find_package(LIBZIP MODULE REQUIRED)
+add_subdirectory(libzip-1.8.0)
+include_directories(${libzip-1.8.0_SOURCE_DIR}/src ${libzip-1.8.0_SOURCE_DIR})
 
 add_library(libzippp "src/libzippp.cpp")
 add_library(libzippp::libzippp ALIAS libzippp) # Convenience alias
