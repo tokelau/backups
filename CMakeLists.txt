@@ -27,9 +27,3 @@ add_subdirectory(labs_src)
 enable_testing()
 
 add_subdirectory(labs_tests)
-
-#add_library(libzippp SHARED libzippp.dll)
-#link_directories(libzippp)
-#target_link_libraries(ict-homework-3 LINK_PUBLIC zip)
-#target_link_libraries(ict-homework-3 LINK_PUBLIC zlib)
-#target_link_libraries(ict-homework-3 LINK_PUBLIC libzippp)
