@@ -8,7 +8,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 set(BUILD_GMOCK OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(gtest)
 
-add_subdirectory(libzippp-master)
+add_subdirectory(../labs_src/lab3/libzippp-master)
 include_directories(${libzippp-master_SOURCE_DIR}/src ${libzippp-master_SOURCE_DIR})
 
 add_executable(

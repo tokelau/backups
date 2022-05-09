@@ -1,8 +1,6 @@
 #include <gtest/gtest.h>
 
 #include "lab3/BackupJob.h"
-//#include "lab3/JobObject.h"
-//#include "lab3/RestorePoint.h"
 #include <fstream>
 #include <filesystem>
 

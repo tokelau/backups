@@ -45,7 +45,7 @@ find_path(LIBLZMA_INCLUDE_DIR lzma.h )
 if(NOT LIBLZMA_LIBRARY)
   find_library(LIBLZMA_LIBRARY_RELEASE NAMES lzma liblzma PATH_SUFFIXES lib)
   find_library(LIBLZMA_LIBRARY_DEBUG NAMES lzmad liblzmad PATH_SUFFIXES lib)
-  include(${CMAKE_CURRENT_LIST_DIR}/SelectLibraryConfigurations.cmake)
+  include(SelectLibraryConfigurations.cmake)
   select_library_configurations(LIBLZMA)
 else()
   file(TO_CMAKE_PATH "${LIBLZMA_LIBRARY}" LIBLZMA_LIBRARY)
@@ -66,7 +66,7 @@ endif()
 # it can be found in http://tukaani.org/xz/
 # Avoid using old codebase
 if (LIBLZMA_LIBRARY)
-  include(${CMAKE_CURRENT_LIST_DIR}/CheckLibraryExists.cmake)
+  include(CheckLibraryExists.cmake)
   set(CMAKE_REQUIRED_QUIET_SAVE ${CMAKE_REQUIRED_QUIET})
   set(CMAKE_REQUIRED_QUIET ${LibLZMA_FIND_QUIETLY})
   if(NOT LIBLZMA_LIBRARY_RELEASE AND NOT LIBLZMA_LIBRARY_DEBUG)
@@ -83,7 +83,7 @@ if (LIBLZMA_LIBRARY)
   set(CMAKE_REQUIRED_QUIET ${CMAKE_REQUIRED_QUIET_SAVE})
 endif ()
 
-include(${CMAKE_CURRENT_LIST_DIR}/FindPackageHandleStandardArgs.cmake)
+include(FindPackageHandleStandardArgs.cmake)
 find_package_handle_standard_args(LibLZMA  REQUIRED_VARS  LIBLZMA_LIBRARY
                                                           LIBLZMA_INCLUDE_DIR
                                                           LIBLZMA_HAS_AUTO_DECODER
