@@ -6,7 +6,7 @@
 #include <sys/stat.h>
 #include "RestorePoint.h"
 #include "Storage.h"
-//#include "libzippp.h"
+#include "libzippp.h"
 
 using namespace std;
 using namespace libzippp;
@@ -16,7 +16,7 @@ public:
     void set_path(const string& backup_path) {
         _path = backup_path + "backups/";
         cout << (_path) << endl;
-        if (mkdir((_path).c_str()) == -1) {
+        if (mkdir((_path).c_str(), 0777) == -1) {
             throw runtime_error("Folder exists");
         }
     }

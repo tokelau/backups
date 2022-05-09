@@ -2,7 +2,7 @@
 
 void Repository::save(const RestorePoint& restorePoint, const string& arch_name) {
     // создать папку
-    if (mkdir((_path + arch_name).c_str()) == -1)
+    if (mkdir((_path + arch_name).c_str(), 0777) == -1)
         runtime_error("Folder exists");
 
     // сохранить бекап
