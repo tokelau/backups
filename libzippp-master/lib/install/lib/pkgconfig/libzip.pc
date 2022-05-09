@@ -1,0 +1,15 @@
+prefix=C:/Users/victo/CLionProjects/KirillovaVika-homework-03/libzippp-master/lib/install
+exec_prefix=${prefix}
+bindir=C:/Users/victo/CLionProjects/KirillovaVika-homework-03/libzippp-master/lib/install/bin
+libdir=C:/Users/victo/CLionProjects/KirillovaVika-homework-03/libzippp-master/lib/install/lib
+includedir=C:/Users/victo/CLionProjects/KirillovaVika-homework-03/libzippp-master/lib/install/include
+
+zipcmp=C:/Users/victo/CLionProjects/KirillovaVika-homework-03/libzippp-master/lib/install/bin/zipcmp
+
+Name: libzip
+Description: library for handling zip archives
+Version: 1.8.0
+Libs:  -L${libdir} -lzip
+Libs.private:  -ladvapi32 -lbcrypt -lz
+Cflags: -I${includedir}
+

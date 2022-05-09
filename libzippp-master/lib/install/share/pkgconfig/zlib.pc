@@ -1,0 +1,13 @@
+prefix=C:/Users/victo/CLionProjects/KirillovaVika-homework-03/libzippp-master/lib/install
+exec_prefix=C:/Users/victo/CLionProjects/KirillovaVika-homework-03/libzippp-master/lib/install
+libdir=C:/Users/victo/CLionProjects/KirillovaVika-homework-03/libzippp-master/lib/install/lib
+sharedlibdir=C:/Users/victo/CLionProjects/KirillovaVika-homework-03/libzippp-master/lib/install/lib
+includedir=C:/Users/victo/CLionProjects/KirillovaVika-homework-03/libzippp-master/lib/install/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.12
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
