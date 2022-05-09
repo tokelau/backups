@@ -18,8 +18,7 @@ FetchContent_Declare(libzip
         QUIET
         URL https://libzip.org/download/libzip-1.8.0.tar.xz
         )
-set(ENABLE_ZSTD "Enable use of Zstandard" ON)
-
+set(ENABLE_ZSTD "Enable use of Zstandard" OFF)
 FetchContent_MakeAvailable(libzip)
 
 FetchContent_Declare(libzippp
